@@ -676,6 +676,130 @@
   }
 
   .card { animation: fadeUp 0.6s ease both; }
+
+  /* === IMAGE SLIDESHOW === */
+  .slideshow-section {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+    border-top: 2px solid rgba(201,168,76,0.2);
+    border-bottom: 2px solid rgba(201,168,76,0.2);
+  }
+
+  .slideshow-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+
+  .slide {
+    min-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #0a0e1a;
+  }
+
+  .slide-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, transparent 100%);
+    padding: 22px 16px 12px;
+    font-size: 10px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .slide-caption span {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Prev / Next arrows */
+  .slide-arrow {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 32px; height: 32px;
+    background: rgba(201,168,76,0.75);
+    border: none;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+    color: var(--navy);
+    font-size: 16px; font-weight: 700;
+    line-height: 1;
+  }
+
+  .slide-arrow:hover { background: var(--gold); }
+  .slide-arrow.prev { left: 10px; }
+  .slide-arrow.next { right: 10px; }
+
+  /* Dots */
+  .slide-dots {
+    position: absolute;
+    bottom: 10px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+    z-index: 10;
+  }
+
+  .slide-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .slide-dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+
+  /* Slide counter badge */
+  .slide-counter-badge {
+    position: absolute;
+    top: 10px; right: 12px;
+    background: rgba(10,22,40,0.7);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 8.5px; font-weight: 600;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  /* Section label above slideshow */
+  .slideshow-label {
+    background: var(--navy-mid);
+    padding: 10px 18px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .slideshow-label-text {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .slideshow-label-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent);
+  }
 </style>
 </head>
 <body>
@@ -755,12 +879,12 @@
           <div class="contact-sublabel">Office</div>
         </div>
       </a>
-      <a class="contact-cell" href="mailto:ilango@richgroup.com.sg">
+      <a class="contact-cell" href="/cdn-cgi/l/email-protection#6c05000d020b032c1e050f040b1e03191c420f0301421f0b">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
-          <div class="contact-label">ilango@richgroup.com.sg</div>
+          <div class="contact-label"><span class="__cf_email__" data-cfemail="9cf5f0fdf2fbf3dceef5fff4fbeef3e9ecb2fff3f1b2effb">[email&#160;protected]</span></div>
           <div class="contact-sublabel">Personal</div>
         </div>
       </a>
@@ -787,36 +911,36 @@
 
     <!-- Email row 2 -->
     <div class="contact-row">
-      <a class="contact-cell" href="mailto:tender@richgroup.com.sg">
+      <a class="contact-cell" href="/cdn-cgi/l/email-protection#3d49585359584f7d4f545e555a4f52484d135e5250134e5a">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
-          <div class="contact-label">tender@richgroup.com.sg</div>
+          <div class="contact-label"><span class="__cf_email__" data-cfemail="2b5f4e454f4e596b594248434c59445e5b0548444605584c">[email&#160;protected]</span></div>
           <div class="contact-sublabel">Tender</div>
         </div>
       </a>
     </div>
 
     <div class="contact-row">
-      <a class="contact-cell" href="mailto:project@richgroup.com.sg">
+      <a class="contact-cell" href="/cdn-cgi/l/email-protection#4232302d2827213602302b212a25302d37326c212d2f6c3125">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
-          <div class="contact-label">project@richgroup.com.sg</div>
+          <div class="contact-label"><span class="__cf_email__" data-cfemail="6313110c0906001723110a000b04110c16134d000c0e4d1004">[email&#160;protected]</span></div>
           <div class="contact-sublabel">Project</div>
         </div>
       </a>
     </div>
 
     <div class="contact-row">
-      <a class="contact-cell" href="mailto:admin@richgroup.com.sg">
+      <a class="contact-cell" href="/cdn-cgi/l/email-protection#7011141d191e300219131817021f05005e131f1d5e0317">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
-          <div class="contact-label">admin@richgroup.com.sg</div>
+          <div class="contact-label"><span class="__cf_email__" data-cfemail="c8a9aca5a1a688baa1aba0afbaa7bdb8e6aba7a5e6bbaf">[email&#160;protected]</span></div>
           <div class="contact-sublabel">Admin</div>
         </div>
       </a>
@@ -833,6 +957,51 @@
         Share
       </button>
     </div>
+  </div>
+
+  <!-- IMAGE SLIDESHOW -->
+  <div class="slideshow-label">
+    <div class="slideshow-label-text">Media Features &amp; Awards</div>
+    <div class="slideshow-label-line"></div>
+  </div>
+  <div class="slideshow-section" id="slideshow">
+    <div class="slideshow-track" id="slideshowTrack">
+
+      <!-- SLIDE 1 -->
+      <div class="slide">
+        <img src="./mf1-722x722.png" alt="Leadership Award">
+        <div class="slide-caption"><span>Leadership Award</span> – Customer Driven Award Ceremony</div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide">
+        <img src="./mf2-542x542.png" alt="Asia Business Outlook">
+        <div class="slide-caption"><span>Asia Business Outlook</span> – Pioneer in M&amp;E Engineering Services Industry</div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide">
+        <img src="./mf3-870x870.png" alt="Rich Innovation Engineering Feature">
+        <div class="slide-caption"><span>Rich Innovation Engineering</span> – M&amp;E Engineering Services Industry Feature</div>
+      </div>
+
+      <!-- SLIDE 4 -->
+      <div class="slide">
+        <img src="./mf4-758x758.png" alt="Brands for Good 2023">
+        <div class="slide-caption"><span>Brands for Good 2023</span> – Passion. Purpose. Possibilities.</div>
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <button class="slide-arrow prev" onclick="moveSlide(-1)">&#8249;</button>
+    <button class="slide-arrow next" onclick="moveSlide(1)">&#8250;</button>
+
+    <!-- Counter badge -->
+    <div class="slide-counter-badge" id="slideCounter">1 / 4</div>
+
+    <!-- Dots -->
+    <div class="slide-dots" id="slideDots"></div>
   </div>
 
   <!-- DROPDOWN SECTIONS -->
@@ -1042,7 +1211,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Download vCard
   function downloadVCard() {
     const vcard = [
@@ -1158,13 +1327,55 @@
     showCert(currentCert);
   }
 
-  // Keyboard nav
+  // Keyboard nav for lightbox
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lightbox').classList.contains('active')) return;
     if (e.key === 'ArrowLeft') prevCert();
     if (e.key === 'ArrowRight') nextCert();
     if (e.key === 'Escape') closeLightbox();
   });
+
+  // === SLIDESHOW ===
+  const totalSlides = document.querySelectorAll('.slide').length;
+  let currentSlide = 0;
+  let autoSlideTimer;
+
+  // Build dots
+  const dotsContainer = document.getElementById('slideDots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  function goToSlide(idx) {
+    currentSlide = (idx + totalSlides) % totalSlides;
+    document.getElementById('slideshowTrack').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+    document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    resetAutoSlide();
+  }
+
+  function moveSlide(dir) { goToSlide(currentSlide + dir); }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => goToSlide(currentSlide + 1), 4000);
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  const track = document.getElementById('slideshowTrack');
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+  });
+
+  // Start auto-slide
+  resetAutoSlide();
+
 </script>
 </body>
 </html>
