@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinniah Ilango – Rich Group of Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D08A;
+    --gold-dark: #9A7730;
+    --navy: #0A1628;
+    --navy-mid: #132240;
+    --navy-light: #1E3460;
+    --white: #FAFAF8;
+    --cream: #F5F0E8;
+    --blue-accent: #1565C0;
+    --text-light: #D4C9B0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d0d0d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card {
+    width: 420px;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(201,168,76,0.2);
+  }
+
+  /* === HEADER === */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d1f3c 100%);
+    padding: 30px 28px 0;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .brand-logo {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--navy);
+    box-shadow: 0 4px 15px rgba(201,168,76,0.4);
+    flex-shrink: 0;
+    border: 1.5px solid var(--gold-light);
+  }
+
+  .brand-text { flex: 1; }
+  .brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.3;
+  }
+  .brand-sub {
+    font-size: 8.5px; font-weight: 400;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-light);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  .profile-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    padding-bottom: 24px;
+  }
+
+  .photo-frame {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .photo-frame img {
+    width: 110px; height: 130px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: brightness(1.05) contrast(1.05);
+  }
+
+  .photo-border {
+    position: absolute;
+    top: -4px; left: -4px; right: -4px; bottom: -4px;
+    border: 1px solid rgba(201,168,76,0.5);
+    pointer-events: none;
+  }
+
+  .photo-accent {
+    position: absolute;
+    top: -8px; left: -8px;
+    width: 24px; height: 24px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+  .photo-accent-br {
+    position: absolute;
+    bottom: -8px; right: -8px;
+    width: 24px; height: 24px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+
+  .name-block { flex: 1; padding-bottom: 4px; }
+
+  .company-entities {
+    margin-bottom: 14px;
+  }
+
+  .entity-line {
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    opacity: 0.75;
+    line-height: 1.8;
+  }
+
+  .entity-line span {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .divider-gold {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 12px;
+  }
+
+  .person-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 600;
+    color: var(--white);
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .person-name em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .person-title {
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .credentials {
+    font-size: 8.5px; font-weight: 400;
+    color: var(--text-light);
+    opacity: 0.8;
+    line-height: 1.7;
+  }
+
+  /* === CONTACT SECTION === */
+  .contact-section {
+    background: var(--navy-mid);
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s;
+  }
+
+  .contact-row:hover { background: rgba(201,168,76,0.05); }
+
+  .contact-cell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 18px;
+    text-decoration: none;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+  }
+
+  .contact-cell:last-child { border-right: none; }
+
+  .contact-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg { width: 13px; height: 13px; fill: var(--gold); }
+
+  .contact-label {
+    font-size: 10px; font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+  }
+
+  .contact-sublabel {
+    font-size: 8.5px; color: var(--text-light); opacity: 0.6;
+    letter-spacing: 0.5px;
+  }
+
+  .full-row { flex: unset; width: 100%; }
+
+  .address-cell {
+    display: flex; align-items: flex-start;
+    gap: 11px; padding: 12px 18px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .address-text { font-size: 10px; color: var(--white); line-height: 1.7; font-weight: 400; }
+
+  /* Web row */
+  .web-row {
+    display: flex; align-items: center;
+    gap: 11px; padding: 11px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .web-row a { font-size: 10.5px; color: var(--gold-light); text-decoration: none; font-weight: 500; letter-spacing: 0.5px; }
+
+  /* === ACTION BUTTONS === */
+  .actions {
+    display: flex;
+    gap: 0;
+    padding: 16px 18px;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .action-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: all 0.25s;
+  }
+
+  .action-btn:hover {
+    background: rgba(201,168,76,0.18);
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+  }
+
+  .action-btn svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+
+  /* === DROPDOWN SECTIONS === */
+  .sections { background: var(--navy); }
+
+  .section-item {
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    overflow: hidden;
+  }
+
+  .section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 22px;
+    cursor: pointer;
+    background: var(--navy-mid);
+    transition: background 0.2s;
+    user-select: none;
+  }
+
+  .section-header:hover { background: rgba(201,168,76,0.08); }
+
+  .section-header.active {
+    background: rgba(201,168,76,0.1);
+    border-left: 3px solid var(--gold);
+  }
+
+  .section-title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .section-header.active .section-title { color: var(--gold); }
+
+  .chevron {
+    width: 18px; height: 18px;
+    border: 1.5px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s, border-color 0.2s;
+  }
+
+  .section-header.active .chevron {
+    transform: rotate(180deg);
+    border-color: var(--gold);
+  }
+
+  .chevron svg { width: 9px; height: 9px; fill: var(--gold); }
+
+  .section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    background: rgba(0,0,0,0.25);
+  }
+
+  .section-body.open { max-height: 1200px; }
+
+  /* Company Profile body */
+  .profile-body { padding: 20px; }
+
+  .profile-card {
+    background: linear-gradient(135deg, #1565C0, #0d47a1);
+    border-radius: 6px;
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .profile-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(21,101,192,0.4); }
+
+  .profile-card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    transform: translate(20px, -20px);
+  }
+
+  .profile-card-logo {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-weight: 700;
+    color: white;
+  }
+
+  .profile-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: white; letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .profile-card p {
+    font-size: 9px; color: rgba(255,255,255,0.75);
+    letter-spacing: 0.5px; font-style: italic;
+    margin-bottom: 14px;
+  }
+
+  .open-pdf-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white; padding: 8px 16px;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .open-pdf-btn:hover { background: rgba(255,255,255,0.25); }
+  .open-pdf-btn svg { width: 12px; height: 12px; fill: white; }
+
+  /* Certificates grid */
+  .certs-body { padding: 16px; }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .cert-thumb {
+    aspect-ratio: 3/4;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+
+  .cert-thumb:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 15px rgba(201,168,76,0.25);
+    transform: scale(1.03);
+  }
+
+  .cert-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .cert-thumb .cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,22,40,0.7);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .cert-thumb:hover .cert-overlay { opacity: 1; }
+
+  .cert-overlay svg { width: 24px; height: 24px; fill: var(--gold); }
+
+  /* Add cert placeholder */
+  .cert-add {
+    aspect-ratio: 3/4;
+    background: rgba(201,168,76,0.06);
+    border: 1.5px dashed rgba(201,168,76,0.3);
+    border-radius: 3px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: pointer; gap: 6px;
+    transition: all 0.2s;
+    font-size: 8px; color: var(--gold); opacity: 0.7;
+    letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;
+  }
+
+  .cert-add:hover { opacity: 1; background: rgba(201,168,76,0.1); }
+  .cert-add svg { width: 20px; height: 20px; fill: var(--gold); }
+
+  /* Services */
+  .services-body { padding: 20px; }
+
+  .service-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .service-item:last-child { border-bottom: none; }
+
+  .service-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .service-text { font-size: 10.5px; color: var(--text-light); line-height: 1.5; }
+
+  /* Achievements */
+  .achieve-body { padding: 20px; }
+
+  .achieve-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .achieve-item:last-child { border-bottom: none; }
+
+  .achieve-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--gold);
+    opacity: 0.7;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 30px;
+    text-align: right;
+  }
+
+  .achieve-text { font-size: 10.5px; color: var(--text-light); line-height: 1.5; }
+
+  /* === LIGHTBOX === */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.93);
+    z-index: 1000;
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox-inner {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    animation: lbIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+
+  @keyframes lbIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .lightbox-inner img {
+    width: 100%; display: block;
+    border: 1px solid rgba(201,168,76,0.4);
+  }
+
+  .lb-close {
+    position: absolute;
+    top: -14px; right: -14px;
+    width: 30px; height: 30px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--navy);
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+
+  .lb-nav {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 34px; height: 34px;
+    background: rgba(201,168,76,0.85);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--navy); font-size: 16px; font-weight: 700;
+  }
+
+  .lb-prev { left: -40px; }
+  .lb-next { right: -40px; }
+
+  .lb-counter {
+    text-align: center;
+    font-size: 9px; color: var(--text-light);
+    margin-top: 10px; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background: var(--navy);
+    padding: 14px;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer-text { font-size: 8.5px; color: var(--text-light); opacity: 0.5; letter-spacing: 1px; }
+  .footer-text a { color: var(--gold); text-decoration: none; }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card { animation: fadeUp 0.6s ease both; }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-bar">
+      <div class="brand-logo">RiE</div>
+      <div class="brand-text">
+        <div class="brand-name">Rich Group of Company</div>
+        <div class="brand-sub">Integrated M&amp;E Services</div>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <div class="photo-frame">
+        <img src="https://i.imgur.com/placeholder.jpg" alt="Chinniah Ilango"
+          onerror="this.style.background='linear-gradient(135deg,#1E3460,#0A1628)';this.style.display='block';this.parentElement.style.background='linear-gradient(135deg,#1E3460,#0A1628)'">
+        <div class="photo-border"></div>
+        <div class="photo-accent"></div>
+        <div class="photo-accent-br"></div>
+      </div>
+
+      <div class="name-block">
+        <div class="company-entities">
+          <div class="entity-line"><span>RICH</span> Innovation Engineering Pte Ltd</div>
+          <div class="entity-line"><span>RICH</span> Integrated Engineering Pte Ltd</div>
+        </div>
+        <div class="divider-gold"></div>
+        <div class="person-name">Chinniah <em>Ilango</em></div>
+        <div class="person-title">Managing Director</div>
+        <div class="credentials">
+          MSC (Int.Const.Mgt), B.Eng (Mech)<br>
+          B.Eng (Elect), Adv.Dip (BMS), FSM, MIES
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-section">
+
+    <!-- Phone row -->
+    <div class="contact-row">
+      <a class="contact-cell" href="tel:+6588553131">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">+65 8855 3131</div>
+          <div class="contact-sublabel">Mobile</div>
+        </div>
+      </a>
+      <a class="contact-cell" href="tel:+6584883131">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">+65 8488 3131</div>
+          <div class="contact-sublabel">Mobile 2</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Landline + main email -->
+    <div class="contact-row">
+      <a class="contact-cell" href="tel:+6569043131">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">+65 6904 3131</div>
+          <div class="contact-sublabel">Office</div>
+        </div>
+      </a>
+      <a class="contact-cell" href="mailto:ilango@richgroup.com.sg">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">ilango@richgroup.com.sg</div>
+          <div class="contact-sublabel">Personal</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Address -->
+    <div class="address-cell">
+      <div class="contact-icon" style="margin-top:2px">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div class="address-text">
+        48 Toh Guan Road East, Enterprise Hub<br>
+        #09-123, Singapore 608586
+      </div>
+    </div>
+
+    <!-- Website -->
+    <div class="web-row">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <a href="https://www.richgroup.com.sg" target="_blank">www.richgroup.com.sg</a>
+    </div>
+
+    <!-- Email row 2 -->
+    <div class="contact-row">
+      <a class="contact-cell" href="mailto:tender@richgroup.com.sg">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">tender@richgroup.com.sg</div>
+          <div class="contact-sublabel">Tender</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-row">
+      <a class="contact-cell" href="mailto:project@richgroup.com.sg">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">project@richgroup.com.sg</div>
+          <div class="contact-sublabel">Project</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-row">
+      <a class="contact-cell" href="mailto:admin@richgroup.com.sg">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">admin@richgroup.com.sg</div>
+          <div class="contact-sublabel">Admin</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Save / Share -->
+    <div class="actions">
+      <button class="action-btn" onclick="alert('Save Contact feature – connect to vCard')">
+        <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm0-10h4v6h6v-6h4l-7-7-7 7z"/></svg>
+        Save Contact
+      </button>
+      <button class="action-btn" onclick="navigator.share ? navigator.share({title:'Chinniah Ilango', url: window.location.href}) : alert('Share: copy this URL')">
+        <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        Share
+      </button>
+    </div>
+  </div>
+
+  <!-- DROPDOWN SECTIONS -->
+  <div class="sections">
+
+    <!-- Company Profile -->
+    <div class="section-item" id="sec-profile">
+      <div class="section-header" onclick="toggleSection('profile')">
+        <span class="section-title">Company Profile</span>
+        <div class="chevron"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+      </div>
+      <div class="section-body" id="body-profile">
+        <div class="profile-body">
+          <div class="profile-card" onclick="openPDF()">
+            <div class="profile-card-logo">RiE</div>
+            <h3>RICH INNOVATION ENGINEERING PTE LTD</h3>
+            <p>Integrated Mechanical &amp; Electrical Engineering Solutions</p>
+            <button class="open-pdf-btn">
+              <svg viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+              Open Company Profile PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates & Awards -->
+    <div class="section-item" id="sec-certs">
+      <div class="section-header" onclick="toggleSection('certs')">
+        <span class="section-title">Certificates &amp; Awards</span>
+        <div class="chevron"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+      </div>
+      <div class="section-body" id="body-certs">
+        <div class="certs-body">
+          <div class="cert-grid" id="certGrid">
+            <!-- Cert placeholders - user can replace src with real images -->
+            <div class="cert-thumb" onclick="openLightbox(0)">
+              <img src="" alt="Certificate 1" onerror="this.parentElement.innerHTML='<div style=\'padding:10px;text-align:center;font-size:8px;color:#C9A84C;opacity:0.7;\'>Cert 1</div><div class=\'cert-overlay\'><svg viewBox=\'0 0 24 24\'><path d=\'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\'/></svg></div>'">
+              <div class="cert-overlay"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+            </div>
+
+            <div class="cert-thumb" onclick="openLightbox(1)">
+              <img src="" alt="Certificate 2" onerror="this.parentElement.innerHTML='<div style=\'padding:10px;text-align:center;font-size:8px;color:#C9A84C;opacity:0.7;\'>Cert 2</div><div class=\'cert-overlay\'><svg viewBox=\'0 0 24 24\'><path d=\'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\'/></svg></div>'">
+              <div class="cert-overlay"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+            </div>
+
+            <div class="cert-thumb" onclick="openLightbox(2)">
+              <img src="" alt="Certificate 3" onerror="this.parentElement.innerHTML='<div style=\'padding:10px;text-align:center;font-size:8px;color:#C9A84C;opacity:0.7;\'>Cert 3</div>'">
+              <div class="cert-overlay"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+            </div>
+
+            <div class="cert-thumb" onclick="openLightbox(3)">
+              <img src="" alt="Certificate 4" onerror="this.parentElement.innerHTML='<div style=\'padding:10px;text-align:center;font-size:8px;color:#C9A84C;opacity:0.7;\'>Cert 4</div>'">
+              <div class="cert-overlay"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+            </div>
+
+            <div class="cert-thumb" onclick="openLightbox(4)">
+              <img src="" alt="Certificate 5" onerror="this.parentElement.innerHTML='<div style=\'padding:10px;text-align:center;font-size:8px;color:#C9A84C;opacity:0.7;\'>Cert 5</div>'">
+              <div class="cert-overlay"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+            </div>
+
+            <!-- Add more -->
+            <div class="cert-add" onclick="alert('Add certificate image – replace src in cert-thumb divs')">
+              <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              Add More
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Services -->
+    <div class="section-item" id="sec-services">
+      <div class="section-header" onclick="toggleSection('services')">
+        <span class="section-title">Our Services</span>
+        <div class="chevron"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+      </div>
+      <div class="section-body" id="body-services">
+        <div class="services-body">
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Mechanical & Electrical (M&E) Engineering Solutions</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Building Management Systems (BMS) Integration</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">ACMV / HVAC Design, Supply & Installation</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Electrical Wiring & Power Distribution</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Fire Protection & Safety Systems</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Plumbing & Sanitary Works</div></div>
+          <div class="service-item"><div class="service-dot"></div><div class="service-text">Integrated Facility Management & Maintenance</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="section-item" id="sec-achieve">
+      <div class="section-header" onclick="toggleSection('achieve')">
+        <span class="section-title">Achievements</span>
+        <div class="chevron"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+      </div>
+      <div class="section-body" id="body-achieve">
+        <div class="achieve-body">
+          <div class="achieve-item"><div class="achieve-num">17+</div><div class="achieve-text">Certificates & Awards including Top 500 SME Singapore recognition</div></div>
+          <div class="achieve-item"><div class="achieve-num">15+</div><div class="achieve-text">Years of experience in Integrated M&E Engineering</div></div>
+          <div class="achieve-item"><div class="achieve-num">500+</div><div class="achieve-text">Successfully completed M&E projects across Singapore</div></div>
+          <div class="achieve-item"><div class="achieve-num">SICCI</div><div class="achieve-text">Ordinary Corporate Member – Singapore Indian Chamber of Commerce & Industry</div></div>
+          <div class="achieve-item"><div class="achieve-num">ISO</div><div class="achieve-text">ISO 9001:2015 Certified Quality Management System</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-text">Powered by <a href="#">Tricove Tech</a></div>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <div class="lightbox-inner">
+    <div class="lb-close" onclick="closeLightbox()">✕</div>
+    <div class="lb-nav lb-prev" onclick="prevCert()">‹</div>
+    <div class="lb-nav lb-next" onclick="nextCert()">›</div>
+    <img id="lbImg" src="" alt="Certificate">
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<script>
+  // Sections – only one open at a time
+  const sections = ['profile', 'certs', 'services', 'achieve'];
+
+  function toggleSection(id) {
+    const body = document.getElementById('body-' + id);
+    const header = body.previousElementSibling;
+    const isOpen = body.classList.contains('open');
+
+    // Close all
+    sections.forEach(s => {
+      document.getElementById('body-' + s).classList.remove('open');
+      document.getElementById('body-' + s).previousElementSibling.classList.remove('active');
+    });
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      body.classList.add('open');
+      header.classList.add('active');
+    }
+  }
+
+  // PDF open
+  function openPDF() {
+    // Replace '#' with actual PDF URL
+    const pdfUrl = '#';
+    if (pdfUrl === '#') {
+      alert('Replace pdfUrl in openPDF() with your Company Profile PDF link.');
+    } else {
+      window.open(pdfUrl, '_blank');
+    }
+  }
+
+  // Certificate images – replace these src values with real image paths
+  const certImages = [
+    { src: '', label: 'Certificate 1 of 17' },
+    { src: '', label: 'Certificate 2 of 17' },
+    { src: '', label: 'Certificate 3 of 17' },
+    { src: '', label: 'Certificate 4 of 17' },
+    { src: '', label: 'Certificate 5 of 17' },
+  ];
+
+  let currentCert = 0;
+
+  function openLightbox(idx) {
+    currentCert = idx;
+    showCert(idx);
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showCert(idx) {
+    const img = document.getElementById('lbImg');
+    const counter = document.getElementById('lbCounter');
+    img.src = certImages[idx] ? certImages[idx].src : '';
+    counter.textContent = certImages[idx] ? certImages[idx].label : `Image ${idx+1} of ${certImages.length}`;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+
+  function prevCert() {
+    currentCert = (currentCert - 1 + certImages.length) % certImages.length;
+    showCert(currentCert);
+  }
+
+  function nextCert() {
+    currentCert = (currentCert + 1) % certImages.length;
+    showCert(currentCert);
+  }
+
+  // Keyboard nav
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') prevCert();
+    if (e.key === 'ArrowRight') nextCert();
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
