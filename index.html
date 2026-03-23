@@ -74,14 +74,18 @@
   .brand-logo {
     width: 44px; height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    background: var(--white);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-weight: 700;
-    color: var(--navy);
     box-shadow: 0 4px 15px rgba(201,168,76,0.4);
     flex-shrink: 0;
     border: 1.5px solid var(--gold-light);
+    overflow: hidden;
+  }
+
+  .brand-logo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .brand-text { flex: 1; }
@@ -480,50 +484,112 @@
   .cert-add:hover { opacity: 1; background: rgba(201,168,76,0.1); }
   .cert-add svg { width: 20px; height: 20px; fill: var(--gold); }
 
-  /* Services */
-  .services-body { padding: 20px; }
-
-  .service-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+  /* Services - detailed layout */
+  .svc-intro {
+    padding: 16px 18px 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
   }
 
-  .service-item:last-child { border-bottom: none; }
-
-  .service-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    margin-top: 5px;
-    flex-shrink: 0;
+  .svc-section-title {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
-  .service-text { font-size: 10.5px; color: var(--text-light); line-height: 1.5; }
+  .svc-para {
+    font-size: 10.5px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
 
-  /* Achievements */
-  .achieve-body { padding: 20px; }
+  .svc-para em { color: var(--gold-light); font-style: italic; }
+  .svc-para strong { color: var(--white); font-weight: 600; }
 
+  .svc-block {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+
+  .svc-block:last-child { border-bottom: none; }
+
+  .svc-block-title {
+    font-size: 10px; font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .svc-list {
+    list-style: none;
+    margin-top: 8px;
+  }
+
+  .svc-list li {
+    font-size: 10.5px;
+    color: var(--text-light);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .svc-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  /* Achievements - updated */
   .achieve-item {
     display: flex; gap: 14px; align-items: flex-start;
-    padding: 12px 0;
+    padding: 13px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
   .achieve-item:last-child { border-bottom: none; }
 
-  .achieve-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 700;
-    color: var(--gold);
-    opacity: 0.7;
-    line-height: 1;
+  .achieve-icon {
+    font-size: 18px;
     flex-shrink: 0;
-    width: 30px;
-    text-align: right;
+    width: 28px;
+    text-align: center;
+    margin-top: 1px;
   }
 
-  .achieve-text { font-size: 10.5px; color: var(--text-light); line-height: 1.5; }
+  .achieve-text {
+    font-size: 10.5px;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .achieve-link {
+    text-decoration: none;
+    color: var(--gold-light);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .achieve-link:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* Services body wrapper */
+  .services-body { padding: 0; }
+
+  /* Achievements body */
+  .achieve-body { padding: 6px 18px 10px; }
+
+  /* Service & Achievement section headers */
 
   /* === LIGHTBOX === */
   .lightbox {
@@ -613,7 +679,9 @@
   <!-- HEADER -->
   <div class="header">
     <div class="brand-bar">
-      <div class="brand-logo">RiE</div>
+      <div class="brand-logo">
+        <img src="./WhatsApp Image 2026-03-10 at 9.34.43 PM.jpeg" alt="RiE Logo">
+      </div>
       <div class="brand-text">
         <div class="brand-name">Rich Group of Company</div>
         <div class="brand-sub">Integrated M&amp;E Services</div>
@@ -622,7 +690,7 @@
 
     <div class="profile-section">
       <div class="photo-frame">
-        <img src="https://i.imgur.com/placeholder.jpg" alt="Chinniah Ilango"
+        <img src="./profile.jpg" alt="Chinniah Ilango"
           onerror="this.style.background='linear-gradient(135deg,#1E3460,#0A1628)';this.style.display='block';this.parentElement.style.background='linear-gradient(135deg,#1E3460,#0A1628)'">
         <div class="photo-border"></div>
         <div class="photo-accent"></div>
@@ -750,7 +818,7 @@
 
     <!-- Save / Share -->
     <div class="actions">
-      <button class="action-btn" onclick="alert('Save Contact feature – connect to vCard')">
+      <button class="action-btn" onclick="downloadVCard()">
         <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm0-10h4v6h6v-6h4l-7-7-7 7z"/></svg>
         Save Contact
       </button>
@@ -872,13 +940,48 @@
       </div>
       <div class="section-body" id="body-services">
         <div class="services-body">
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Mechanical & Electrical (M&E) Engineering Solutions</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Building Management Systems (BMS) Integration</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">ACMV / HVAC Design, Supply & Installation</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Electrical Wiring & Power Distribution</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Fire Protection & Safety Systems</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Plumbing & Sanitary Works</div></div>
-          <div class="service-item"><div class="service-dot"></div><div class="service-text">Integrated Facility Management & Maintenance</div></div>
+
+          <div class="svc-intro">
+            <div class="svc-section-title">OUR COMPANY SERVICES</div>
+            <p class="svc-para"><em>RICH Innovation Engineering Pte Ltd</em> offers <strong>Installation</strong> and <strong>Maintenance</strong> of AIR CONDITIONING &amp; VENTILATION SYSTEM, ELECTRICAL, ELV, FIRE PROTECTION AND PLUMBING &amp; SANITARY SYSTEM.</p>
+          </div>
+
+          <div class="svc-block">
+            <div class="svc-block-title">ACMV SYSTEM</div>
+            <p class="svc-para">We provide design, installation of ACMV (Air Conditioning and Mechanical Ventilation) System Such as; Split unit, Multi Split, VRV Air Conditioning and Chill Water Piping and Ducting Systems for Commercial and Residential Building. <em>For New construction and A&amp;A works</em></p>
+          </div>
+
+          <div class="svc-block">
+            <div class="svc-block-title">Electrical &amp; ELV System</div>
+            <p class="svc-para">We provide design, installation of Electrical system such as; Sub Main Cabling, Bus Bar, Cable support system and Final circuit Wiring works. <em>For New construction and A&amp;A works</em></p>
+            <p class="svc-para" style="margin-top:8px;">Our range of ELV System Service are as follows:</p>
+            <ul class="svc-list">
+              <li>Data and Telephone Cabling Installation System</li>
+              <li>Public Address System &amp; CCTV</li>
+              <li>Server and Patch Panel Installation</li>
+              <li>Security and Door Access System</li>
+            </ul>
+          </div>
+
+          <div class="svc-block">
+            <div class="svc-block-title">Fire Protection System</div>
+            <p class="svc-para">We provide design, installation of Fire protection systems. <em>For New construction and A&amp;A works</em></p>
+            <p class="svc-para" style="margin-top:8px;">Our range of Fire Protection System services are as follows:</p>
+            <ul class="svc-list">
+              <li>Sprinkler System</li>
+              <li>Gas Suppression System – FM200</li>
+              <li>Hose Reel System</li>
+              <li>Dry and Wet Riser System</li>
+              <li>Fire Alarm System</li>
+              <li>FSSD Submission</li>
+            </ul>
+          </div>
+
+          <div class="svc-block">
+            <div class="svc-block-title">Plumbing &amp; Sanitary System</div>
+            <p class="svc-para">We specialize in Sanitary &amp; plumbing installation for both Commercial and Residential building, ranging from sink, pipe, toilet bowl, tap, water tank, water heater installation, etc. <em>For New construction and A&amp;A works</em></p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -891,11 +994,22 @@
       </div>
       <div class="section-body" id="body-achieve">
         <div class="achieve-body">
-          <div class="achieve-item"><div class="achieve-num">17+</div><div class="achieve-text">Certificates & Awards including Top 500 SME Singapore recognition</div></div>
-          <div class="achieve-item"><div class="achieve-num">15+</div><div class="achieve-text">Years of experience in Integrated M&E Engineering</div></div>
-          <div class="achieve-item"><div class="achieve-num">500+</div><div class="achieve-text">Successfully completed M&E projects across Singapore</div></div>
-          <div class="achieve-item"><div class="achieve-num">SICCI</div><div class="achieve-text">Ordinary Corporate Member – Singapore Indian Chamber of Commerce & Industry</div></div>
-          <div class="achieve-item"><div class="achieve-num">ISO</div><div class="achieve-text">ISO 9001:2015 Certified Quality Management System</div></div>
+          <div class="achieve-item">
+            <div class="achieve-icon">🏆</div>
+            <a class="achieve-text achieve-link" href="https://www.visionawards.com.sg/rich-innovation-engineering-singapore-prestige-class-award-top-leading-entrepreneurs-award-2022-2023/" target="_blank">Vision Media Group – Top 20 SME Excellence Business Award – 2022/2023</a>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon">🥇</div>
+            <a class="achieve-text achieve-link" href="https://www.visionawards.com.sg/rich-innovation-engineering-singapore-prestige-class-award-top-leading-entrepreneurs-award-2022-2023/" target="_blank">Vision Media Group – Top 20 Singapore Prestige Class Award – 2022/2023</a>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon">🌟</div>
+            <a class="achieve-text achieve-link" href="https://www.visionawards.com.sg/rich-innovation-engineering-singapore-prestige-class-award-top-leading-entrepreneurs-award-2022-2023/" target="_blank">Brands For Good 2023 – Rich Innovation Engineering Pte. Ltd.</a>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon">🌏</div>
+            <a class="achieve-text achieve-link" href="https://www.visionawards.com.sg/rich-innovation-engineering-singapore-prestige-class-award-top-leading-entrepreneurs-award-2022-2023/" target="_blank">Asia Business Outlook Top 10 Companies From Asia – 2022</a>
+          </div>
         </div>
       </div>
     </div>
@@ -921,6 +1035,38 @@
 </div>
 
 <script>
+  // Download vCard
+  function downloadVCard() {
+    const vcard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'FN:Chinniah Ilango',
+      'N:Ilango;Chinniah;;;',
+      'ORG:RICH Innovation Engineering Pte Ltd',
+      'TITLE:Managing Director',
+      'TEL;TYPE=CELL,PREF:+6588553131',
+      'TEL;TYPE=CELL:+6584883131',
+      'TEL;TYPE=WORK,VOICE:+6569043131',
+      'EMAIL;TYPE=PREF:ilango@richgroup.com.sg',
+      'EMAIL:tender@richgroup.com.sg',
+      'EMAIL:project@richgroup.com.sg',
+      'EMAIL:admin@richgroup.com.sg',
+      'ADR;TYPE=WORK:;;48 Toh Guan Road East #09-123;Singapore;;608586;Singapore',
+      'URL:https://www.richgroup.com.sg',
+      'END:VCARD'
+    ].join('\r\n');
+
+    const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Chinniah_Ilango.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
   // Sections – only one open at a time
   const sections = ['profile', 'certs', 'services', 'achieve'];
 
