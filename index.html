@@ -385,14 +385,20 @@
   }
 
   .profile-card-logo {
-    width: 40px; height: 40px;
+    width: 80px; height: 80px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    background: white;
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 12px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px; font-weight: 700;
-    color: white;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .profile-card-logo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .profile-card h3 {
@@ -841,7 +847,9 @@
       <div class="section-body" id="body-profile">
         <div class="profile-body">
           <div class="profile-card" onclick="openPDF()">
-            <div class="profile-card-logo">RiE</div>
+            <div class="profile-card-logo">
+              <img src="./WhatsApp Image 2026-03-10 at 9.34.43 PM.jpeg" alt="logo">
+            </div>
             <h3>RICH INNOVATION ENGINEERING PTE LTD</h3>
             <p>Integrated Mechanical &amp; Electrical Engineering Solutions</p>
             <button class="open-pdf-btn">
@@ -1018,7 +1026,7 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-text">Powered by <a href="#">JJK Info Tech</a></div>
+    <div class="footer-text">Powered by <a href="#">Tricove Tech</a></div>
   </div>
 
 </div>
